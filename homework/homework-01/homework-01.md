@@ -62,3 +62,14 @@ AK20 <- read_csv("../../data/AK20.txt")
     ## 1037 YEAR_OF_IMP_097 1/0/T/F/TRUE/FALSE   2017 '../../data/AK20.txt'
     ## .... ............... .................. ...... .....................
     ## See problems(...) for more details.
+
+    ## # A tibble: 6 x 7
+    ##   STATE_CODE_001 STRUCTURE_NUMBER… YEAR_BUILT_027 RAILINGS_036A TRANSITIONS_036B
+    ##   <chr>          <chr>                      <dbl> <chr>         <chr>           
+    ## 1 02             0176                        1998 0             0               
+    ## 2 02             0177                        2015 1             1               
+    ## 3 02             0178                        1973 1             1               
+    ## 4 02             0179                        2011 0             0               
+    ## 5 02             0180                        2004 0             0               
+    ## 6 02             0181                        2011 0             0               
+    ## # … with 2 more variables: APPR_RAIL_036C <chr>, LOCATION_009 <chr>
