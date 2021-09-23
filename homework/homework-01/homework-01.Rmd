@@ -18,7 +18,7 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r cars}
 library(tidyverse)
 library(readr)
-AK20 <- read_csv("Documents/stat433/data/AK20.txt")
+AK20 <- read_csv("../../data/AK20.txt")
 ```
 
 ## Including Plots
