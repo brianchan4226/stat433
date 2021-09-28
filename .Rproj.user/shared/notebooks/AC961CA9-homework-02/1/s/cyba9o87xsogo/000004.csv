@@ -1,0 +1,3 @@
+"0","transmute(flights, "
+"0","          dep_time, "
+"0","          minute = ((dep_time %/% 100) * 60) + (dep_time %% 100))"

@@ -1,0 +1,6 @@
+"0","q1a = count(flights, is.na(dep_time))"
+"0","q1b = count(flights, is.na(dep_delay))"
+"0","q1c = count(flights, is.na(arr_time))"
+"0","q1d = count(flights, is.na(arr_delay))"
+"0","q1e = count(flights, is.na(tailnum))"
+"0","q1f = count(flights, is.na(air_time))"
