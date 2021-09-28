@@ -1,0 +1,9 @@
+"0","flights2 <- flights %>%"
+"0","  group_by(year, month, day) %>%"
+"0","  summarize("
+"0","    cancelled_flights = sum(is.na(dep_time)),"
+"0","    arr_delay = sum(arr_delay, na.rm = TRUE)"
+"0","  )"
+"2","`summarise()` has grouped output by 'year', 'month'. You can override using the `.groups` argument.
+"
+"0","ggplot(flights2, aes(x = cancelled_flights, y = arr_delay)) + geom_point()"
