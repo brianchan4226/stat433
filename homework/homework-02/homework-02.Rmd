@@ -2,24 +2,18 @@
 title: "homework-02"
 author: "Chun Pong Brian Chan"
 date: "9/27/2021"
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(nycflights13)
 library(tidyverse)
-
-```
-
-```{r}
-flights
-
 ```
 
 ## Question 1
 
-```{r flights}
+```{r}
 count(flights, is.na(dep_time))
 count(flights, is.na(dep_delay))
 count(flights, is.na(arr_time))
@@ -28,12 +22,12 @@ count(flights, is.na(tailnum))
 count(flights, is.na(air_time))
 ##sum(is.na.data.frame(flights))
 ```
-I am quite sure these are quite self-explanatory with the name of the variable.
+I am quite sure these are quite self-explanatory with the name of the variable. It means the nnumber of rows that are missing.
 
 
 ## Question 2
 
-```{r flights}
+```{r}
 transmute(flights, 
           dep_time, 
           minute = ((dep_time %/% 100) * 60) + (dep_time %% 100))
@@ -42,18 +36,10 @@ transmute(flights,
 
 ## Question 3
 
-```{r flights}
-transmute(flights, 
-          dep_time, 
-          minute = ((dep_time %/% 100) * 60) + (dep_time %% 100))
+```{r}
+flights2 <- flights %>%
+  group_by(year, month, day) %>%
+  summarize(cancelled_flights = sum(is.na(dep_delay)),
+            arr_delay = sum(arr_delay, na.rm = TRUE))
+ggplot(flights2, aes(x = cancelled_flights, y = arr_delay)) + geom_point()
 ```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
